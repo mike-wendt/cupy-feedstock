@@ -42,7 +42,7 @@ requirements:
     - python
     - pip
     - setuptools
-    - cython >=0.24.0
+    - cython >=0.28.0
     - fastrlock >=0.3
     - cudnn
     - nccl
