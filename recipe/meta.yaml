@@ -1,14 +1,12 @@
 {% set name = "cupy" %}
-{% set version = "8.0.0b4" %}
-{% set sha256 = "33c791f2ce074785b3d665a8ea3b99c86d425eea4b61ec65d4dd2cf9bafa124a" %}
+{% set version = "8.0.0dev" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  - url: https://github.com/cupy/cupy/archive/v{{ version }}.tar.gz
-    sha256: {{ sha256 }}
+  - git_url: https://github.com/cupy/cupy.git
 
   # CUB support has too many bugs, let us wait for a bit longer
   ## 1. The CUB support has been extensively tested with v1.8.0, so we should pin it here
