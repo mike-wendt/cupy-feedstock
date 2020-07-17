@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  - path: .
+  - path: cupy/
 
   # CUB support has too many bugs, let us wait for a bit longer
   ## 1. The CUB support has been extensively tested with v1.8.0, so we should pin it here
