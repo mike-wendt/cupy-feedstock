@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  - git_url: https://github.com/cupy/cupy.git
+  - path: .
 
   # CUB support has too many bugs, let us wait for a bit longer
   ## 1. The CUB support has been extensively tested with v1.8.0, so we should pin it here
@@ -20,8 +20,8 @@ build:
   skip: true  # [cuda_compiler_version in (undefined, "None")]
   script:
     #- export CUB_PATH=${PWD}/cub_v1.8.0  # TODO(leofang): remove this
-    - export THRUST_IGNORE_CUB_VERSION_CHECK=1
-    - rm -rf ${PWD}/core/include/cupy/cub
+    #- export THRUST_IGNORE_CUB_VERSION_CHECK=1
+    #- rm -rf ${PWD}/core/include/cupy/cub
     - {{ PYTHON }} -m pip install . -vv
 
     # copy activate/deactivate scripts
