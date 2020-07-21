@@ -20,8 +20,6 @@ build:
   skip: true  # [cuda_compiler_version in (undefined, "None")]
   script:
     #- export CUB_PATH=${PWD}/cub_v1.9.10  # TODO(leofang): remove this
-    - export CUPY_CUB_PATH=/usr/local/cuda/include/cub
-    - rm -rf core/include/cupy/cub # remove outdated cub submodule
     - {{ PYTHON }} -m pip install . -vv
 
     # copy activate/deactivate scripts
