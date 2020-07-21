@@ -11,16 +11,16 @@ source:
   # CUB support has too many bugs, let us wait for a bit longer
   ## 1. The CUB support has been extensively tested with v1.8.0, so we should pin it here
   ## 2. This dependency should be removed once CuPy bundles CUB (cupy/cupy#2584)
-  #- url: https://github.com/NVlabs/cub/archive/v1.8.0.tar.gz
-  #  sha256: 025658f4c933cd2aa8cc88a559d013338d68de3fa639cc1f2b12cf61dc759667
-  #  folder: cub_v1.8.0  # so the source code is in cupy/cub_v1.8.0
+  #- url: https://github.com/NVlabs/cub/archive/v1.9.10.tar.gz
+  #  sha256: 2bd7077a3d9741f0689e6c1eb58c6278fc96eccc27d964168bc8be1bc3a9040f
+  #  folder: cub_v1.9.10  # so the source code is in cupy/cub_v1.8.0
 
 build:
   number: 0
   skip: true  # [cuda_compiler_version in (undefined, "None")]
   script:
-    #- export CUB_PATH=${PWD}/cub_v1.8.0  # TODO(leofang): remove this
-    - export CUPY_CUB_PATH=/usr/local/cuda
+    #- export CUB_PATH=${PWD}/cub_v1.9.10  # TODO(leofang): remove this
+    - export CUPY_CUB_PATH=/usr/local/cuda/include/cub
     - {{ PYTHON }} -m pip install . -vv
 
     # copy activate/deactivate scripts
