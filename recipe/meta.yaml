@@ -21,6 +21,7 @@ build:
   script:
     #- export CUB_PATH=${PWD}/cub_v1.8.0  # TODO(leofang): remove this
     - export CUPY_CUB_PATH=/usr/local/cuda
+    - sed -i 's/c++11/c++14/g' cupy_setup_build.py
     - {{ PYTHON }} -m pip install . -vv
 
     # copy activate/deactivate scripts
