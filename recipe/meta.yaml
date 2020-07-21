@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  - git_url: https://github.com/cupy/cupy.git
+  - git_url: https://github.com/mike-wendt/cupy.git
   
   # CUB support has too many bugs, let us wait for a bit longer
   ## 1. The CUB support has been extensively tested with v1.8.0, so we should pin it here
@@ -21,7 +21,6 @@ build:
   script:
     #- export CUB_PATH=${PWD}/cub_v1.8.0  # TODO(leofang): remove this
     - export CUPY_CUB_PATH=/usr/local/cuda
-    - sed -i 's/c++11/c++14/g' cupy_setup_build.py
     - {{ PYTHON }} -m pip install . -vv
 
     # copy activate/deactivate scripts
