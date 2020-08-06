@@ -1,5 +1,5 @@
 {% set name = "cupy" %}
-{% set version = "7.6.0" %}
+{% set version = "7.8.0dev.rapidsai0.15" %}
 {% set sha256 = "f1679c62222a1506af903b5e338980a39b355c575d3cae8d9b2059ace7644330" %}
 
 package:
@@ -7,8 +7,10 @@ package:
   version: {{ version }}
 
 source:
-  - url: https://github.com/cupy/cupy/archive/v{{ version }}.tar.gz
-    sha256: {{ sha256 }}
+  #- url: https://github.com/cupy/cupy/archive/v{{ version }}.tar.gz
+  #  sha256: {{ sha256 }}
+  git_url: https://github.com/cupy/cupy.git
+  git_rev: v7
 
   # CUB support has too many bugs, let us wait for a bit longer
   ## 1. The CUB support has been extensively tested with v1.8.0, so we should pin it here
@@ -18,7 +20,7 @@ source:
   #  folder: cub_v1.8.0  # so the source code is in cupy/cub_v1.8.0
 
 build:
-  number: 0
+  number: {{ GIT_DESCRIBE_NUMBER }}
   skip: true  # [cuda_compiler_version in (undefined, "None")]
   script:
     #- export CUB_PATH=${PWD}/cub_v1.8.0  # TODO(leofang): remove this
