@@ -3,27 +3,20 @@ c_compiler:
 c_compiler_version:
 - '7'
 channel_sources:
-- conda-forge,defaults
+- rapidsai,rapidsai-nightly,nvidia,conda-forge,defaults
 channel_targets:
 - conda-forge main
 cuda_compiler:
 - nvcc
 cuda_compiler_version:
 - '10.2'
-cudnn:
-- 7.6.5
 cxx_compiler:
 - gxx
 cxx_compiler_version:
 - '7'
 docker_image:
 - condaforge/linux-anvil-cuda:10.2
-nccl:
-- 2.4.6.1
 pin_run_as_build:
-  cudnn:
-    min_pin: x.x
-    max_pin: x
   python:
     min_pin: x.x
     max_pin: x.x
