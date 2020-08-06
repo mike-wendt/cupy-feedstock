@@ -1,3 +1,6 @@
+cudnn:
+  - 7.6.5 # [cuda_compiler_version != "11.0"]
+  - 8.0.0 # [cuda_compiler_version == "11.0"]
 nccl:
   - 2.4.6.1 # [cuda_compiler_version != "11.0"]
   - 2.7.8.1 # [cuda_compiler_version == "11.0"]
