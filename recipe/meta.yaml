@@ -46,8 +46,10 @@ requirements:
     - setuptools
     - cython >=0.24.0
     - fastrlock >=0.3
-    - cudnn
-    - nccl
+    - cudnn =7.6.5      # [cuda_compiler_version != "11.0"]
+    - cudnn =8.0.0      # [cuda_compiler_version == "11.0"]
+    - nccl =2.4.6.1     # [cuda_compiler_version != "11.0"]
+    - nccl =2.7.8.1     # [cuda_compiler_version == "11.0"]
 
   run:
     - python
