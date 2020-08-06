@@ -57,8 +57,10 @@ requirements:
     - fastrlock >=0.3
     - numpy >=1.9.0
     - six >=1.9.0
-    # - cudnn  <-- added via run_export
-    # - nccl   <-- added via run_export
+    - cudnn =7.6.5      # [cuda_compiler_version != "11.0"]
+    - cudnn =8.0.0      # [cuda_compiler_version == "11.0"]
+    - nccl =2.4.6.1     # [cuda_compiler_version != "11.0"]
+    - nccl =2.7.8.1     # [cuda_compiler_version == "11.0"]
 
 test:
   requires:
