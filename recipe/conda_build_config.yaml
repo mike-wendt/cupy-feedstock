@@ -7,6 +7,8 @@ nccl:
 python:
   - 3.7.* *_cpython
   - 3.8.* *_cpython
+channel_sources:
+  - rapidsai,rapidsai-nightly,nvidia,conda-forge,defaults
 cuda_compiler_version:
   - 9.2                        # [linux64]
   - 10.0                       # [linux64]
