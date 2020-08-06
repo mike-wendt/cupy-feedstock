@@ -1,6 +1,9 @@
 nccl:
   - 2.4.6.1 # [cuda_compiler_version != "11.0"]
   - 2.7.8.1 # [cuda_compiler_version == "11.0"]
+python:
+  - 3.7.* *_cpython
+  - 3.8.* *_cpython
 cuda_compiler_version:
   - 9.2                        # [linux64]
   - 10.0                       # [linux64]
@@ -13,7 +16,6 @@ docker_image:                           # [os.environ.get("BUILD_PLATFORM", "").
   - condaforge/linux-anvil-cuda:10.1    # [linux64 and (os.environ.get("BUILD_PLATFORM") == "linux-64" or os.environ.get("CONFIG_VERSION", "1") == "1")]
   - condaforge/linux-anvil-cuda:10.2    # [linux64 and (os.environ.get("BUILD_PLATFORM") == "linux-64" or os.environ.get("CONFIG_VERSION", "1") == "1")]
   - mikewendt/linux-anvil-cuda:11.0    # [linux64 and (os.environ.get("BUILD_PLATFORM") == "linux-64" or os.environ.get("CONFIG_VERSION", "1") == "1")]
-
 zip_keys:
   -                             # [(os.environ.get("CONFIG_VERSION", "1") == "1" and linux64) or os.environ.get("BUILD_PLATFORM") == "linux-64"]
     - cuda_compiler_version     # [(os.environ.get("CONFIG_VERSION", "1") == "1" and linux64) or os.environ.get("BUILD_PLATFORM") == "linux-64"]
