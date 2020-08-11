@@ -19,6 +19,8 @@ build:
   skip: true  # [cuda_compiler_version in (undefined, "None")]
   script:
     - export CUDA_HOME=/usr/local/cuda
+    - export CUDA_PATH=/usr/local/cuda
+    - export NVCC=/usr/local/cuda/bin/nvcc
     - {{ PYTHON }} -m pip install . -vv
 
     # copy activate/deactivate scripts
