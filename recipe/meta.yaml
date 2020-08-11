@@ -19,6 +19,7 @@ build:
   skip: true  # [cuda_compiler_version in (undefined, "None")]
   script:
     #- export CUB_PATH=${PWD}/cub_v1.8.0  # TODO(leofang): remove this
+    - export CUDA_HOME=/usr/local/cuda
     - {{ PYTHON }} -m pip install . -vv
 
     # copy activate/deactivate scripts
