@@ -7,3 +7,10 @@ if [[ $CONDA_CUPY_CUDA_PATH ]]; then
 else
     unset CUDA_PATH
 fi
+
+if [[ $CONDA_CUB_DISABLED ]]; then
+    export CUB_DISABLED=$CONDA_CUB_DISABLED
+    unset CONDA_CUB_DISABLED
+else
+    unset CONDA_CUB_DISABLED
+fi
