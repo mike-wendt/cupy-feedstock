@@ -1,5 +1,5 @@
 {% set name = "cupy" %}
-{% set version = "7.8.0dev.rapidsai0.15" %}
+{% set version = "7.8.0" %}
 {% set sha256 = "f1679c62222a1506af903b5e338980a39b355c575d3cae8d9b2059ace7644330" %}
 
 package:
