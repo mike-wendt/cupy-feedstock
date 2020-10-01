@@ -1,5 +1,5 @@
 {% set name = "cupy" %}
-{% set version = "8.0.0rc1" %}
+{% set version = "8.0.0" %}
 #{% set sha256 = "f1679c62222a1506af903b5e338980a39b355c575d3cae8d9b2059ace7644330" %}
 
 package:
@@ -10,7 +10,7 @@ source:
   #- url: https://github.com/cupy/cupy/archive/v{{ version }}.tar.gz
   #  sha256: {{ sha256 }}
   - git_url: https://github.com/cupy/cupy.git
-    git_rev: v8
+    git_rev: v8.0.0
     patches:
       - patches/0001-CUDA-11-fixes.patch
 
